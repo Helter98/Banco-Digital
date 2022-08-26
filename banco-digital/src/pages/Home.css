@@ -1,0 +1,70 @@
+
+:root{
+    --cor1: #000000;
+    --cor2: #636363;
+    --cor3: #F2F2F2;
+    --cor4: #FFFFFF;
+    --cor5: #5AADC4;
+}
+
+.hero {
+    background-image: url(../assets/image-hero3.jpg);  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 555px;
+}
+
+.infoCadastro {
+    display: flex;
+    justify-content:flex-end;
+    text-align: left;
+    padding-right: 120px;
+}
+
+.infoCadastro h1 {
+    text-transform: uppercase;
+    color:var(--cor3);
+    font-weight: 500;
+    font-size: 28px;
+    margin-top: 230px;
+}
+
+.infoCadastro h1 .spanColor {
+    background-color:var(--cor5);
+    display: flex;
+    width: 150px;
+    padding: 5px;
+}
+
+.infoCadastro h1 .spanColor2 {
+    background-color:var(--cor5);
+    display: flex;
+    width: 220px;
+    padding: 5px;
+}
+
+.intBtn {
+    display: flex;
+    justify-content: end;
+    padding-right: 300px;
+    margin-top: 20px;
+}
+
+.btnCadastro{
+    display: flex;
+    font-size: 22px;
+    text-decoration: none;
+    color: var(--cor3);
+    text-align: center;
+    padding: 10px 45px;
+    border-radius: 30px;
+    border: 2px solid var(--cor3);
+}
+.btnCadastro:hover{
+    background-color: #5AADC4;
+}
+
+
+
