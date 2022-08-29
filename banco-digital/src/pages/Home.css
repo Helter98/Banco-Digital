@@ -4,7 +4,7 @@
     --cor2: #636363;
     --cor3: #F2F2F2;
     --cor4: #FFFFFF;
-    --cor5: #5AADC4;
+    --cor5: #35B6CE;
 }
 
 .hero {
@@ -64,6 +64,9 @@
 }
 .btnCadastro:hover{
     background-color: #5AADC4;
+}
+.btnCadastro::placeholder {
+    color: #35B6CE;
 }
 
 

@@ -3,7 +3,7 @@
     --cor2: #636363;
     --cor3: #F2F2F2;
     --cor4: #FFFFFF;
-    --cor5: #5AADC4;
+    --cor5: #30B1CC;
 }
 
 nav {
@@ -35,6 +35,7 @@ nav a:hover {
 .active {
     background-color: var(--cor5);
     color:var(--cor3);
+    height: 100%;
 }
 
 a.btnLogin{
