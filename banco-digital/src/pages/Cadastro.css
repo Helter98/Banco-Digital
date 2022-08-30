@@ -30,7 +30,7 @@
     color: var(--cor1);
     margin-top: 350px;
     text-align: left;
-    padding-left: 40px;
+    padding-left: 130px;
 }
 
 form {
@@ -38,12 +38,14 @@ form {
     flex-direction:column;
     margin: 30px auto ;
     background-color: var(--cor4);
-    position: fixed;
-    left: 800px;
+    position:absolute;
+    left: 750px;
     bottom: 0px;
     width: 500px;
     height: 500px;
     border-radius: 15px;
+
+    
 }
 
 .selectForm{
@@ -56,17 +58,16 @@ form {
     display: flex;
 }
 
-.buttonSelect{
-    background-color: var(--cor5);
-    width: 150px;
-    height: 40px;
-    border-radius: 25px;
-    cursor: pointer;
+.opSelect{
     font-size: 16px;
     border: none;
-    color: var(--cor3);
-    padding: 0px;
-    margin-left: 40px;
+    color: var(--cor2);
+
+    cursor: pointer;
+}
+
+.opSelect:hover {
+    color: var(--cor5);
 }
 
 
@@ -82,7 +83,7 @@ input{
     padding: 10px 0px;
     outline: 0;
     font-size: 20px;
-    cursor: pointer;
+    cursor:text;
 }
 input::placeholder{
     color: var(--cor2);
@@ -92,6 +93,15 @@ input::placeholder{
 input::placeholder:hover{
     color: var(--cor5);
     padding-top: 20px;
+}
+
+span {
+    display: flex;
+    color: red;
+    padding-left: 50px;
+    font-weight: 500;
+    font-size: 12px;
+    position: absolute;
 }
 
 .btnPCadastro{
@@ -106,7 +116,7 @@ input::placeholder:hover{
     color: var(--cor3);
 }
 
-.pessoaFisica{
+.pessoa{
     display: flex;
     flex-direction: column;
     justify-content: center;
