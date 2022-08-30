@@ -9,6 +9,7 @@ import InputMask from 'react-input-mask';
 
 //Tratamento de erros no preenchimento do formuláro
 const schema = yup.object({
+  cpf: yup.string().required('O CPF é obrigatório'),
   name: yup.string().required('O nome é obrigatório'),
   email: yup.string().email('Digite um email válido').required('O email é obrigatório'),
   password: yup.string().min(6, 'A senha deve ter pelo menos 6 digitos').required('A senha é obrigatório'),
@@ -92,10 +93,10 @@ const Cadastro = () => {
             : 
             <div className='pessoa'>
               <label>
-              <InputMask placeholder='CPF' mask="999.999.999-99" />
+              <InputMask placeholder='CPF' mask="999.999.999-99" {...register("cpf", { required: true })} />
                {/* <input type="text" placeholder='CPF' {...register("cpf", { required: true })} /> */}
                 {errors.cpf &&
-                  <span>Este campo é obrigatório</span>
+                  <span>{errors.cpf?.message}</span>
                 }
               </label>
 
