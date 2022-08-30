@@ -9,7 +9,8 @@ import InputMask from 'react-input-mask';
 
 //Tratamento de erros no preenchimento do formuláro
 const schema = yup.object({
-  cpf: yup.string().required('O CPF é obrigatório'),
+  cpf: yup.string().required('O CNPJé obrigatório'),
+  cnpj: yup.string().required('O CPF é obrigatório'),
   name: yup.string().required('O nome é obrigatório'),
   email: yup.string().email('Digite um email válido').required('O email é obrigatório'),
   password: yup.string().min(6, 'A senha deve ter pelo menos 6 digitos').required('A senha é obrigatório'),
@@ -29,7 +30,7 @@ const Cadastro = () => {
 
   //Enviar formulário
   const onSubmit = (registerUser) => {
-    console.log('formulario enviado')
+    console.log(registerUser)
   }
   
   return (
@@ -53,9 +54,10 @@ const Cadastro = () => {
           {showPessoaJuridica ?
             <div className='pessoa'>
               <label>
-                <input type="text" placeholder='CNPJ' {...register("cnpj", { required: true })} />
+              <InputMask placeholder='CNPJ' mask="99.999.999/9999-99" {...register("cnpj", { required: true })} />
+               {/*  <input type="text" placeholder='CNPJ' {...register("cnpj", { required: true })} />*/}
                 {errors.cnpj &&
-                  <span>dfsdafsdf</span>
+                  <span>{errors.cnpj?.message}</span>
                 }
               </label>
 
