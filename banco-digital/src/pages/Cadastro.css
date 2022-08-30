@@ -15,8 +15,9 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 50%;
+    width: 100%;
     height: 555px;
+    position: absolute;
 }
 
 .heroCadastro h1 {
@@ -36,6 +37,13 @@ form {
     display:flex;
     flex-direction:column;
     margin: 30px auto ;
+    background-color: var(--cor4);
+    position: fixed;
+    left: 800px;
+    bottom: 0px;
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
 }
 
 .selectForm{
@@ -50,16 +58,17 @@ form {
 
 .buttonSelect{
     background-color: var(--cor5);
-    width: 100px;
+    width: 150px;
     height: 40px;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     border: none;
     color: var(--cor3);
     padding: 0px;
-    margin-right: 10px;
+    margin-left: 40px;
 }
+
 
 label {
     padding-top: 40px;
@@ -68,9 +77,9 @@ label {
 input{
     border: none;
     border-bottom: 1px solid var(--cor2);
-    width: 500px;
+    width: 400px;
     height: 10px;
-    padding: 20px 0px;
+    padding: 10px 0px;
     outline: 0;
     font-size: 20px;
     cursor: pointer;
@@ -97,7 +106,8 @@ input::placeholder:hover{
     color: var(--cor3);
 }
 
-.PessoaFisica{
-   
+.pessoaFisica{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
