@@ -38,19 +38,23 @@ form {
     flex-direction:column;
     margin: 30px auto ;
     background-color: var(--cor4);
-    position:absolute;
-    left: 750px;
-    bottom: 70px;
+    position:relative;
+    left: 300px;
+    bottom: 500px;
     width: 500px;
     height: 500px;
     border-radius: 15px;
-
-    
+    padding-top: 40px;
+}
+.pessoa{
+    display: flex;
+    flex-direction: column;
 }
 
-.selectForm{
+select{
     display: flex;
-    justify-content: center;
+    margin: 20px 0px 0px 45px;
+    font-size: 18px;
 }
 
 .selectForm label{
@@ -69,7 +73,6 @@ form {
 .opSelect:hover {
     color: var(--cor5);
 }
-
 
 label {
     padding-top: 40px;
@@ -104,7 +107,7 @@ span {
     position: absolute;
 }
 
-.btnPCadastro{
+#btnPCadastro{
     background-color: var(--cor5);
     margin: 40px auto;
     width: 300px;
