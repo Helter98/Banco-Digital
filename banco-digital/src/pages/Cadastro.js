@@ -6,55 +6,56 @@ import InputMask from 'react-input-mask';
 
 const Cadastro = () => {
 
-  // // USE FORM
   const { register, handleSubmit, formState: { erros } } = useForm();
+  
 
-    const addPost = data => console.log(data)
-
-  //SELECIONAR A OPÇÃO DE CADASTRO DE PESSOA JURIDICA
-  const [documentType, setDocumentType] = useState('CPF') 
+  const [type, setType] = useState("CPF")
 
 
   return (
-    //PAGINA DE CADASTRO
     <div className='Cadastro'>
       <div className='heroCadastro'>
-        <h1>Complete os campos ao lado
-          <br />para se cadastrar <br /> em nosso banco</h1>
-          
-          <form onSubmit={handleSubmit(addPost)}>
+        <form onSubmit={handleSubmit}>
+          <h1>Cadastro</h1>
+          <div className="allForm">
+            <div className="formCheck">
+              <div className='inputRadioRow'>
+              <div className="inputRadio">
+              <input type="radio" name="document_type" id="CPF" value={"CPF"} onClick={(e) => setType(e.target.value)} />
+                <label>Pessoa Fisica</label>
+              </div>
+              <div className="inputRadio">
+              <input type="radio" name="document_type" id="CNPJ" value={"CNPJ"} onClick={(e) => setType(e.target.value)} />
+                <label>Pessoa Juridica</label>
+                </div>
+              </div>
+            </div>
 
-          <div className="selectForm">
-            <select name="document_type" id="document_type" value={documentType} onChange={(e)=>setDocumentType(e.target.value)}>
-              <option value="CPF">CPF</option>
-              <option value="CNPJ">CNPJ</option>
-            </select>
-          </div>
+                <div className='inputMaskType'>
+                {type === "CPF" ?  
+                  <InputMask className="styleInfo" mask="999.999.999-99" type="text" name='document_number' {...register("ducument_number")}  placeholder="CPF"/> 
+                : <InputMask className="styleInfo" mask="99.99.999/9999-99" type="text" name='document_number' {...register("ducument_number")}  placeholder="CNPJ" /> 
+                }
+                </div>
+            
+                <div className='inputInfo'>
+                  <label htmlFor="name">
+                    <input className='styleInfo' type="text" name="name" id="name" {...register("name")} placeholder="Nome Completo" />
+                  </label>
+                  <label htmlFor="name">
+                    <input className='styleInfo' type="email" name="email" id="email" {...register("email", { required: true })} placeholder='Email' />
+                  </label>
+                  <label htmlFor="">
+                  <input className="styleInfo" name="password" id="password" {...register("password")} type="password" placeholder="Senha" />
+                  </label>
+                </div>
+              </div>
 
-          <div className='pessoa'>
-          <label htmlFor="document_number"> 
-              <InputMask type="document_number" name="document_number" id="document_number" {...register("document_type", { required: true })} placeholder={documentType} />
-          </label>
+        <input id='btnCadastro' type="submit" value="Enviar" />
 
-           <label htmlFor="name">
-              <input type='text' name='name' {...register("name", { required: true })} placeholder='Nome' />
-          </label>
-
-          <label htmlFor="email">
-            <input type="email" name="email" id="email" {...register("email", { required: true })} placeholder='Email' />
-          </label>
-
-          <label htmlFor="password">
-            <input type="password" name="password" id="password" {...register("email", { required: true })} placeholder='Senha' />
-          </label>
-
-          <input id='btnPCadastro' type="submit" value="Enviar" />
-          </div>
         </form>
       </div>
-    <div>
-  </div>
-</div>
+    </div>
   )
 }
 export default Cadastro

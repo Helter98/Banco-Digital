@@ -20,94 +20,61 @@
     position:absolute;
 }
 
-.heroCadastro h1 {
-    display: flex;
-    justify-content:flex-start;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 500;
-    font-size: 32px;
-    color: var(--cor1);
-    margin-top: 350px;
-    text-align: left;
-    padding-left: 130px;
+form {
+    background-color: var(--cor4);
+    margin: 20px auto;
+    width: 500px;
+    height: 550px;
+    border-radius: 15px;
+    padding: 60px 0px;
 }
 
-form {
-    display:flex;
-    flex-direction:column;
-    margin: 30px auto ;
-    background-color: var(--cor4);
-    position:relative;
-    left: 300px;
-    bottom: 500px;
-    width: 500px;
-    height: 500px;
-    border-radius: 15px;
-    padding-top: 40px;
+form h1 {
+    color:var(--cor1);
+    font-weight: 500;
 }
-.pessoa{
+
+.formCheck{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputRadioRow {
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    padding: 0px 0px 0px 60px;
+    
+}
+
+.inputRadio {
+    margin-right: 20px;
+}
+
+.inputMaskType{
+    padding-top: 20px;
+}
+
+.styleInfo {
+
+    border: none;
+    border-bottom: 1px solid var(--cor2);
+    width: 76%;
+    height: 10px;
+    padding: 9px 0px;
+    font-size: 20px;
+    outline: 0;
+    cursor:text;
+    margin-top: 30px;
+}
+
+.inputInfo{
     display: flex;
     flex-direction: column;
 }
 
-select{
-    display: flex;
-    margin: 20px 0px 0px 45px;
-    font-size: 18px;
-}
-
-.selectForm label{
-    color: var(--cor2);
-    display: flex;
-}
-
-.opSelect{
-    font-size: 16px;
-    border: none;
-    color: var(--cor2);
-
-    cursor: pointer;
-}
-
-.opSelect:hover {
-    color: var(--cor5);
-}
-
-label {
-    padding-top: 40px;
-}
-
-input{
-    border: none;
-    border-bottom: 1px solid var(--cor2);
-    width: 400px;
-    height: 10px;
-    padding: 10px 0px;
-    outline: 0;
-    font-size: 20px;
-    cursor:text;
-}
-input::placeholder{
-    color: var(--cor2);
-    padding-top: 20px;
-}
-
-input::placeholder:hover{
-    color: var(--cor5);
-    padding-top: 20px;
-}
-
-span {
-    display: flex;
-    color: red;
-    padding-left: 50px;
-    font-weight: 500;
-    font-size: 12px;
-    position: absolute;
-}
-
-#btnPCadastro{
+#btnCadastro{
     background-color: var(--cor5);
     margin: 40px auto;
     width: 300px;
@@ -119,8 +86,8 @@ span {
     color: var(--cor3);
 }
 
-.pessoa{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#btnCadastro:hover {
+    background-color: #417F91;
 }
+
+
