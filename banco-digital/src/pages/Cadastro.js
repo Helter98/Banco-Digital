@@ -10,12 +10,27 @@ const Cadastro = () => {
 
   const [type, setType] = useState("CPF")
 
-  const addCadastro = data => axios.post(data)
-  .then(() => {
-    console.log('deu certo')
+ 
+  
+  // const addCadastro = data => console.log(
+  //   {name: data.name,
+  //       document_type: data.document_type,
+  //       document_number: parseInt(data.document_number), 
+  //       email: data.email, 
+  //       password:  data.password
+  //     }) 
+  const addCadastro = data => axios.post("https://9d97-179-108-104-153.sa.ngrok.io/api/users", 
+  {name: data.name,
+    document_type: data.document_type,
+    document_number: parseInt(data.document_number), 
+    email: data.email, 
+    password: data.password
   })
-  .catch(() => {
-    console.log('erro')
+  .then((response) => {
+    console.log(response.data)
+  })
+  .catch((erro) => {
+    console.log(erro, 'erro')
   })
 
   return (
@@ -37,8 +52,8 @@ const Cadastro = () => {
           </div>
           <div className='inputMaskType'>
             {type === "CPF" ?
-              <InputMask className="styleInfo" mask="999.999.999-99" type="text" name='document_number' {...register("ducument_number")} placeholder="CPF" />
-              : <InputMask className="styleInfo" mask="99.99.999/9999-99" type="text" name='document_number' {...register("ducument_number")} placeholder="CNPJ" />
+              <InputMask className="styleInfo" mask="99999999999" type="text" name='document_number' {...register("document_number")} placeholder="CPF" />
+              : <InputMask className="styleInfo" mask="9999999999999" type="text" name='document_number' {...register("document_number")} placeholder="CNPJ" />
             }
           </div>
 
