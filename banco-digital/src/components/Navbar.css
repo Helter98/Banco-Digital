@@ -11,11 +11,10 @@ nav {
     justify-content: center;
     align-items: center;
     background-color:var(--cor4);    
-    width: 100%;
 }
 
 .logo {
-    padding-right: 120px;
+    margin-right: 50px;
 }
 
 nav a{
@@ -25,11 +24,12 @@ nav a{
     color:var(--cor5);
     font-weight: 300;
     font-size: 20px;
+
 }
 
 nav a:hover {
     padding: 20px;
-
+    color: var(--cor2);
 }
 
 .active {

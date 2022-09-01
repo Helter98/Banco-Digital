@@ -3,6 +3,8 @@ import { useState } from 'react'
 import axios from 'axios';
 import { useForm } from 'react-hook-form'
 import InputMask from 'react-input-mask';
+import { NavLink } from "react-router-dom"
+
 
 const Cadastro = () => {
 
@@ -69,9 +71,12 @@ const Cadastro = () => {
             </label>
           </div>
           <input id='btnCadastro' type="submit" value="Enviar" />
+          {/* <NavLink to="/Endereco">
+            
+          </NavLink> */}
         </form>
       </div>
     </div>
   )
 }
-export default Cadastro
+export default Cadastro;
