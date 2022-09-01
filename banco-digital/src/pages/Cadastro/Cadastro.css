@@ -38,6 +38,7 @@ form h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 20px;
 }
 
 .inputRadioRow {
@@ -45,7 +46,6 @@ form h1 {
     flex-direction: row;
     justify-content:left;
     padding: 0px 0px 0px 60px;
-    
 }
 
 .inputRadio {
@@ -53,11 +53,16 @@ form h1 {
 }
 
 .inputMaskType{
+    display: flex;
+    flex-direction: column;
     padding-top: 20px;
+    margin-left: 50px;
 }
 
-.styleInfo {
 
+
+.styleInfo {
+    display: flex;
     border: none;
     border-bottom: 1px solid var(--cor2);
     width: 76%;
@@ -67,12 +72,25 @@ form h1 {
     outline: 0;
     cursor:text;
     margin-top: 30px;
+    margin-left: 20px;
 }
 
 .inputInfo{
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
 }
+
+.spanObrig span {
+    display: flex;
+    font-size: 14px;
+    font-weight: 300;
+    color: red;
+    padding-left: 20px;
+    position: absolute;
+}
+
+
 
 #btnCadastro{
     background-color: var(--cor5);

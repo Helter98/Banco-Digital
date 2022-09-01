@@ -8,9 +8,11 @@
 
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color:var(--cor4);    
+    padding: 0px 120px;
+
 }
 
 .logo {
@@ -38,25 +40,8 @@ nav a:hover {
     height: 100%;
 }
 
-a.btnLogin{
-    padding: 5px 30px;
-    text-decoration: none;
-    color:var(--cor3);
-    font-weight: 300;
-    font-size: 20px;
-    background-color:var(--cor5);
-    border-radius: 25px;
-}
 
-a.btnLogin:hover {
-    padding: 5px 30px;
-    text-decoration: none;
-    color:var(--cor3);
-    font-weight: 300;
-    font-size: 20px;
-    background-color:#417f91;
-    border-radius: 25px;
-}
+
 
 
 
