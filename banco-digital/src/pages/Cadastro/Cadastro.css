@@ -20,7 +20,7 @@
     position:absolute;
 }
 
-form {
+.formCadastro {
     background-color: var(--cor4);
     margin: 20px auto;
     width: 500px;
@@ -32,6 +32,7 @@ form {
 form h1 {
     color:var(--cor1);
     font-weight: 500;
+    
 }
 
 .formCheck{
@@ -39,6 +40,15 @@ form h1 {
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+}
+
+.formCheck span {
+    font-size: 14px;
+    font-weight: 300;
+    color: red;
+    padding-left: 20px;
+    position: absolute;
+    margin-top: 20px;
 }
 
 .inputRadioRow {
@@ -58,8 +68,6 @@ form h1 {
     padding-top: 20px;
     margin-left: 50px;
 }
-
-
 
 .styleInfo {
     display: flex;
@@ -81,7 +89,7 @@ form h1 {
     margin-left: 50px;
 }
 
-.spanObrig span {
+.cadastraCamp span{
     display: flex;
     font-size: 14px;
     font-weight: 300;
@@ -89,8 +97,6 @@ form h1 {
     padding-left: 20px;
     position: absolute;
 }
-
-
 
 #btnCadastro{
     background-color: var(--cor5);

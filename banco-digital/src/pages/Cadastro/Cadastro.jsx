@@ -3,10 +3,23 @@ import { useState } from 'react'
 import axios from 'axios';
 import { useForm } from 'react-hook-form'
 import InputMask from 'react-input-mask';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+//ratamento de erros no preenchimento do formuláro
+const schema = yup.object({
+  document_number: yup.string().required('O documento é obrigatório'),
+  name: yup.string().required('O nome é obrigatório'),
+  email: yup.string().email('Digite um email válido').required('O email é obrigatório'),
+  password: yup.string().min(6, 'A senha deve ter pelo menos 6 digitos').required('A senha é obrigatório'),
+}).required();
+
 
 const Cadastro = () => {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
 
   const [type, setType] = useState("CPF")
 
@@ -28,7 +41,7 @@ const Cadastro = () => {
   return (
     <div className='Cadastro'>
       <div className='heroCadastro'>
-        <form onSubmit={handleSubmit(addCadastro)}>
+        <form className='formCadastro' onSubmit={handleSubmit(addCadastro)}>
           <h1>Cadastro</h1>
           <div className="formCheck">
             <div className='inputRadioRow'>
@@ -41,38 +54,40 @@ const Cadastro = () => {
                 <label>Pessoa Juridica</label>
               </div>
             </div>
+            {errors.document_number && <span>Selecione a opção</span>}
           </div>
 
+          <div className="cadastraCamp">
+
           <div className='inputMaskType'>
+            <label htmlFor="">
             {type === "CPF" ?
-              <InputMask className="styleInfo" mask="99999999999" type="text" name='document_number' {...register("document_number")} placeholder="CPF" />
-              : <InputMask className="styleInfo" mask="99999999999999" type="text" name='document_number' {...register("document_number")} placeholder="CNPJ" />
+              <InputMask className="styleInfo" mask="999.999.999-99" type="text" name='document_number' {...register("document_number", { required: true})} placeholder="CPF" />
+              : <InputMask className="styleInfo" mask="99.999.999/0001.99" type="text" name='document_number' {...register("document_number", { required: true})} placeholder="CNPJ" />
             }
-            <div className='spanObrig'>
-              {errors.document_number && <span>O documento é obrigatório</span>}
-            </div>
+            {errors.document_number?.message && <span>O documento é obrigatório</span>}
+            </label>
+          
           </div>
 
           <div className='inputInfo'>
             <label htmlFor="name">
-              <input className='styleInfo' type="text" name="name" id="name" {...register("name")} placeholder="Nome" />
-              <div className='spanObrig'>
-              {errors.name && <span>O nome é obrigatório</span>}
-            </div>
+              <input className='styleInfo' type="text" name="name" id="name" {...register("name", { required: true})} placeholder="Nome" />
+              {errors.name?.message && <span>O nome é obrigatório</span>}
             </label>
             
             <label htmlFor="email">
               <input className='styleInfo' type="email" name="email" id="email" {...register("email", { required: true })} placeholder='Email' />
-            <div className='spanObrig'>
-              {errors.email && <span>O email é obrigatório</span>}
-            </div>
+              {errors.email?.message && <span>O email é obrigatório</span>}
+
             </label>
+
             <label htmlFor="password">
-              <input className="styleInfo" name="password" id="password" {...register("password")} type="password" placeholder="Senha" />
-            <div className='spanObrig'>
-              {errors.password && <span>A senha é obrigatória</span>}
-            </div>
+              <input className="styleInfo" name="password" id="password" {...register("password", { required: true})} type="password" placeholder="Senha" />
+              {errors.password?.message && <span>A senha é obrigatório</span>}
             </label>
+          </div>
+
           </div>
           <input id='btnCadastro' type="submit" value="Enviar" />
         </form>

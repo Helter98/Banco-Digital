@@ -31,7 +31,8 @@ nav a{
 
 nav a:hover {
     padding: 20px;
-    color: var(--cor2);
+    text-decoration: underline;
+    
 }
 
 .active {

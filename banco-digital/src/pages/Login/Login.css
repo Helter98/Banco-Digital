@@ -1,0 +1,63 @@
+:root{
+    --cor1: #000000;
+    --cor2: #636363;
+    --cor3: #F2F2F2;
+    --cor4: #FFFFFF;
+    --cor5: #35B6CE;
+}
+
+.login{
+    background-image: url(registro.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+}
+
+
+.FormLogin{
+    width: 500px;
+    height: 400px;
+    margin: 70px auto;
+    background-color: var(--cor4);
+    border-radius: 20px;
+}
+
+.FormLogin h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    color: var(--cor2);
+    padding: 60px 0px 0px;
+}
+
+.loginCadasatro {
+    display: flex;
+    border: none;
+    border-bottom: 1px solid var(--cor2);
+    width: 76%;
+    height: 10px;
+    padding: 9px 0px;
+    font-size: 20px;
+    outline: 0;
+    cursor:text;
+    margin: 40px auto;
+}
+
+.buttonLogin {
+   display: flex;
+   margin: auto;
+   background-color: var(--cor5);
+   padding: 15px 60px;
+   border-radius: 30px;
+   border: none;
+   font-size: 16px;
+   color: var(--cor3);
+   font-weight: 600;
+   cursor: pointer;
+}
+
+.buttonLogin:hover {
+    background-color: #30a5b9;
+}
