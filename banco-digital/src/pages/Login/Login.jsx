@@ -2,8 +2,6 @@ import './Login.css';
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../context/auth';
 
-
-
 const Login = () => {
 
   const { authenticated, login } = useContext(AuthContext);

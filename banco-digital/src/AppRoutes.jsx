@@ -13,7 +13,7 @@ import Saque from './pages/Saque/Saque';
 import GerarBoleto from './pages/GerarBoleto/GerarBoleto';
 import PagamentoBoleto from './pages/PagamentoBoleto/PagamentoBoleto';
 import Login from './pages/Login/Login';
-//
+
 import { AuthProvider, AuthContext } from './context/auth';
 
 function AppRoutes() {

@@ -61,3 +61,13 @@
 .buttonLogin:hover {
     background-color: #30a5b9;
 }
+
+.field span {
+    display: flex;
+    font-size: 14px;
+    font-weight: 300;
+    color: red;
+    padding-left: 60px;
+    position: absolute;
+    margin-top: -40px;
+}

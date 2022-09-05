@@ -40,8 +40,9 @@ export const AuthProvider = ({children}) => {
     console.log('logout');
     localStorage.removeItem('user');
     setUser(null) // Dado fisico
-    navigate("/Home")
+    navigate("/")
   }
+  
     return (
         <AuthContext.Provider 
             value={{authenticated: !!user, user, loading, login, logout }}>
