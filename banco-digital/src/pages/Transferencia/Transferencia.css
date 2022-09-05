@@ -20,7 +20,7 @@
     position:absolute;
 }
 
-
+/* 
 .formTransfer {
     display: flex;
     background-color: var(--cor4);
@@ -63,4 +63,4 @@ input {
 input:focus {
     border-bottom: 1px solid red;
 
-}
+} */
