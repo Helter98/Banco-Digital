@@ -21,11 +21,11 @@ const Navbar = () => {
 
             {authenticated ? 
             <>
-            <NavLink to="/Transferencia">Transferência</NavLink>
+            <NavLink to="/Transferencia">Pix</NavLink>
             <NavLink to="/Deposito">Depósito</NavLink>
             <NavLink to="/Saque">Saque</NavLink>
             <NavLink to="/GerarBoleto">Gerar Boleto</NavLink>
-            <NavLink to="/PagamentoBoleto">Pagamento de Boleto</NavLink> 
+            <NavLink to="/PagamentoBoleto">Pagar</NavLink> 
             <button onClick={handleLogout}>Logout</button>
             </>  :
             <>

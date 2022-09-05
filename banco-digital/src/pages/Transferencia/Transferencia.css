@@ -20,11 +20,47 @@
     position:absolute;
 }
 
+
 .formTransfer {
+    display: flex;
     background-color: var(--cor4);
     height: 530px;
-    max-width: 1000px;
+    max-width: 1100px;
     min-width: 725px;
     margin: 15px auto;
-    border-radius: 10px;
+    border-radius: 7px;
+}
+
+.inputFormTransfer{
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    padding: 40px 120px;
+}
+
+.inputFormTransfer h1 {
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.valorTranfer{
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    height: 40px;
+    width: 600px;
+    font-size: 20px;
+    padding-top: 15px;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid var(--cor2);
+    cursor:text;
+}
+
+
+input:focus {
+    border-bottom: 1px solid red;
+
 }
