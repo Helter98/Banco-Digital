@@ -1,0 +1,30 @@
+:root{
+    --cor1: #000000;
+    --cor2: #636363;
+    --cor3: #F2F2F2;
+    --cor4: #FFFFFF;
+    --cor5: #35B6CE;
+}
+
+.Cadastro{
+    display: flex;
+}
+
+.heroTranfer {
+    background-image: url(registro.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+}
+
+.formTransfer {
+    background-color: var(--cor4);
+    height: 530px;
+    max-width: 1000px;
+    min-width: 725px;
+    margin: 15px auto;
+    border-radius: 10px;
+}

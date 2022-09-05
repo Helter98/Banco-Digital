@@ -10,7 +10,7 @@ export const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const recoveredUser = localStorage.getItem('use');
+        const recoveredUser = localStorage.getItem('user');
 
         if(recoveredUser) {
             setUser(JSON.parse(recoveredUser));
@@ -42,7 +42,6 @@ export const AuthProvider = ({children}) => {
     setUser(null) // Dado fisico
     navigate("/")
   }
-  
     return (
         <AuthContext.Provider 
             value={{authenticated: !!user, user, loading, login, logout }}>

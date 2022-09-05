@@ -2,12 +2,11 @@ import './Transferencia.css';
 
 const Transferencia = () => {
   return (
-    <div>
-        <section>   
-        <h1>Transferencia</h1>
-       
-        </section>
-    </div>
+   <div className="heroTranfer">
+    <form className='formTransfer' action="">
+      <h1>Transferência</h1>
+    </form>
+   </div>
   ) 
 }
 

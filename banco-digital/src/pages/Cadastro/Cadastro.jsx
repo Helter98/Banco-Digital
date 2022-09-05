@@ -6,6 +6,8 @@ import InputMask from 'react-input-mask';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom"
+
 
 //ratamento de erros no preenchimento do formuláro
 const schema = yup.object({
@@ -28,7 +30,10 @@ const Cadastro = () => {
 
   const [type, setType] = useState("CPF")
 
-  const addCadastro = data => console.log(data)
+  const addCadastro = data => {
+    console.log(data)
+  }
+
 
   // axios.post("https://9d97-179-108-104-153.sa.ngrok.io/api/users", 
   // {name: data.name,
@@ -44,12 +49,8 @@ const Cadastro = () => {
   //   console.log(erro, 'erro')
   // })
 
-  let navigate = useNavigate();
+    let navigate = useNavigate();
 
-  // async function redirect(event) {
-  //   event.preventDefault();
-  //   navigate("./Login", { replace: true});
-  // }
 
   return (
     <div className='Cadastro'>
@@ -80,7 +81,6 @@ const Cadastro = () => {
             }
             {errors.document_number?.message && <span>O documento é obrigatório</span>}
             </label>
-          
           </div>
 
           <div className='inputInfo'>
@@ -116,7 +116,7 @@ const Cadastro = () => {
           </div>
 
           </div>
-          <input id='btnCadastro' type="submit" value="Enviar" onClick={()=>navigate("/Login")} />
+          <input id='btnCadastro' onClick={()=>navigate("/Login")} type="button" value="Enviar"/>
         </form>
       </div>
     </div>

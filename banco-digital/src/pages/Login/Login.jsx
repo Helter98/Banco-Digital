@@ -10,10 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("")
 
   const handleSubmit = (e) =>{
-    e.preventDefault();
-
-    console.log("submit", { email, password })
-    
+    e.preventDefault();    
     login(email, password); //integração com o contexto e api
   }
 

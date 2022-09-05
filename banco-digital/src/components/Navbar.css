@@ -13,17 +13,17 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color:var(--cor4);    
-    padding: 0px 120px;
+    padding: 0px 50px;
 
 }
 
 .logo {
-    margin-right: 50px;
+    margin-right: 0px;
 }
 
 nav a{
     margin: 0 10px;
-    padding: 20px;
+    padding: 20px 10px;
     text-decoration: none;
     color:var(--cor5);
     font-weight: 300;
@@ -31,7 +31,7 @@ nav a{
 }
 
 nav a:hover {
-    padding: 20px;
+    padding: 20px 10px;
     text-decoration: underline;
 }
 
