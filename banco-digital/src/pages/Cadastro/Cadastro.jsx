@@ -8,10 +8,11 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 
 
+
 //ratamento de erros no preenchimento do formuláro
 const schema = yup.object({
   document_type: yup.string().required('Selecione uma opção'),
-  document_number: yup.number('Digite um documento válido').required('O documento é obrigatório'),
+  document_number: yup.string('Digite um documento válido').required('O documento é obrigatório'),
   name: yup.string().required('O nome é obrigatório'),
   email: yup.string().email('Digite um email válido').required('O email é obrigatório'),
   password: yup.string().min(6, 'A senha deve ter pelo menos 6 digitos').required('A senha é obrigatório'),
@@ -23,30 +24,23 @@ const schema = yup.object({
 
 const Cadastro = () => {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+  const { register, handleSubmit, watch, formState: { errors } } = useForm(
+    {
     resolver: yupResolver(schema)
-  });
+  }
+  );
 
   const [type, setType] = useState("CPF")
 
-  const addCadastro = data => console.log(data)
+  const addCadastro = data => axios.post("https://390a-179-108-104-153.sa.ngrok.io/api/users/registration", data)
+  .then((response) => {
+    console.log(response.data)
+  })
+  .catch((erro) => {
+    console.log(erro, 'erro')
+  })
 
-  // axios.post("https://9d97-179-108-104-153.sa.ngrok.io/api/users", 
-  // {name: data.name,
-  //   document_type: data.document_type,
-  //   document_number: data.document_number,
-  //   email: data.email, 
-  //   password: data.password
-  // })
-  // .then((response) => {
-  //   console.log(response.data)
-  // })
-  // .catch((erro) => {
-  //   console.log(erro, 'erro')
-  // })
-
-    let navigate = useNavigate();
-
+  // let navigate = useNavigate();
 
   return (
     <div className='Cadastro'>
@@ -72,8 +66,8 @@ const Cadastro = () => {
           <div className='inputMaskType'>
             <label htmlFor="">
             {type === "CPF" ?
-              <InputMask className="styleInfo" mask="99999999999" type="text" name='document_number' {...register("document_number", { required: true})} placeholder="CPF" />
-              : <InputMask className="styleInfo" mask="99999999000199" type="text" name='document_number' {...register("document_number", { required: true})} placeholder="CNPJ" />
+              <InputMask className="styleInfo" mask="99999999999" type="text" name='document_number' id='document_number' {...register("document_number", { required: true})} placeholder="CPF" />
+              : <InputMask className="styleInfo" mask="99999999000199" type="text" name='document_number' id='document_number' {...register("document_number", { required: true})} placeholder="CNPJ" />
             }
             {errors.document_number?.message && <span>O documento é obrigatório</span>}
             </label>
@@ -92,11 +86,11 @@ const Cadastro = () => {
 
             <label htmlFor="password">
               <input className="styleInfo" name="password" id="password" {...register("password", { required: true})} type="password" placeholder="Senha" />
-              {errors.password?.message}
+              {errors.password?.message && <span>O email é obrigatório</span>}
             </label>
 
             <label htmlFor="address">
-              <input className="styleInfo" type="text" name="address" id="andress" {...register("address", { required: true})} placeholder="Endereço" />
+              <input className="styleInfo" type="text" name="address" id="address" {...register("address", { required: true})} placeholder="Endereço" />
               {errors.address?.message && <span>O Endereço é obrigatório</span>}
             </label>
 
@@ -111,10 +105,9 @@ const Cadastro = () => {
             </label>
           </div>
 
+          <input id='btnCadastro' type="submit" value="Enviar"/>
+          
           </div>
-          <input id='btnCadastro' 
-          onClick={()=>navigate("/Login")} 
-          type="button" value="Enviar"/>
         </form>
       </div>
     </div>

@@ -1,11 +1,11 @@
 import './Login.css';
-import React, { useState, useContext } from 'react';
-import { AuthContext } from '../../context/auth';
+import React, { useState } from 'react';
+// import { AuthContext } from '../../context/auth';
 import axios from 'axios';
 
 const Login = () => {
 
-  const { authenticated, login } = useContext(AuthContext);
+  // const { authenticated, login } = useContext(AuthContext);
 
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -15,15 +15,20 @@ const Login = () => {
   //   login(username, password); //integração com o contexto e api
   // }
 
-  const addLogin = async (data) => {
+  const addLogin = async(data) => {
     data.preventDefault();
-    console.log("aadas",username, password)
-    await axios.post('https://7268-179-108-104-153.sa.ngrok.io/oauth/token', {
-      client_id: "2",
-      client_secret: "oWYeZUBNkxViZSyKrvydfZWa3YgkUTq78lKt3WTe",
+    console.log(username, password)
+    await axios.post('https://7268-179-108-104-153.sa.ngrok.io/oauth/token', 
+    //  params: {
+     // headers: 'Access-Control-Allow-Origin',
+    //  },
+  
+    {
+      // client_id: "2",
+      // client_secret: "oWYeZUBNkxViZSyKrvydfZWa3YgkUTq78lKt3WTe",
       username: username,
       password: password,
-      grant_type: "password",
+      // grant_type: "password",
     } )
     .then((request)=>{
       console.log(request.data)
@@ -35,7 +40,7 @@ const Login = () => {
 
   return (
     <div className="login">
-      <form className='FormLogin' onSubmit={(e)=>addLogin(e)}>
+      <form className='FormLogin' onSubmit={addLogin}>
       <h1>Login</h1>
       {/* <p>{String(authenticated)}</p> */}
         <div className="field">
@@ -53,3 +58,12 @@ const Login = () => {
 }
 
 export default Login
+
+
+// {
+// 	"client_id": "2",
+// 	"client_secret": "oWYeZUBNkxViZSyKrvydfZWa3YgkUTq78lKt3WTe",
+// 	"username":"teste11279453@gmail.com",
+// 	"password":"123456",
+// 	"grant_type":"password"
+// }
