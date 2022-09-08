@@ -18,24 +18,49 @@ const Login = () => {
   const addLogin = async(data) => {
     data.preventDefault();
     console.log(username, password)
-    await axios.post('https://7268-179-108-104-153.sa.ngrok.io/oauth/token', 
-    //  params: {
-     // headers: 'Access-Control-Allow-Origin',
-    //  },
-  
+    let user = {
+      username, 
+      password, 
+      client_id: "2", 
+      client_secret: "oWYeZUBNkxViZSyKrvydfZWa3YgkUTq78lKt3WTe", 
+      grant_type: "password"
+    }
+
+    // "client_id": "2",
+	  // "client_secret": "oWYeZUBNkxViZSyKrvydfZWa3YgkUTq78lKt3WTe",
+
+    await fetch("https://fc51-179-108-104-153.sa.ngrok.io/oauth/token", 
     {
-      // client_id: "2",
-      // client_secret: "oWYeZUBNkxViZSyKrvydfZWa3YgkUTq78lKt3WTe",
-      username: username,
-      password: password,
-      // grant_type: "password",
-    } )
-    .then((request)=>{
-      console.log(request.data)
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': "*"
+      },
+      body: JSON.stringify(user)
     })
-    .catch((e) =>{
-      console.log(e)
+    .then(response =>{
+      return response.json();
     })
+    .then(data => {
+      console.log(data);
+    })
+    .catch(erro => {
+      console.log(erro, 'erro')
+    })
+
+//     await axios.post('https://fc51-179-108-104-153.sa.ngrok.io/oauth/token', 
+// {
+//       username: username,
+//       password: password,
+
+//     } )
+//     .then((request)=>{
+//       console.log(request.data)
+//     })
+//     .catch((e) =>{
+//       console.log(e)
+//     })
+  
   }
 
   return (
