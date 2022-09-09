@@ -27,14 +27,12 @@ const Navbar = () => {
             <NavLink to="/GerarBoleto">Gerar Boleto</NavLink>
             <NavLink to="/PagamentoBoleto">Pagar</NavLink> 
             <button onClick={handleLogout}>Logout</button>
-            </>  :
+            </> :
             <>
              <NavLink className="btnPCadastro" to="/Cadastro">Cadastro</NavLink>
              <NavLink className="btnLogin" to="/Login">Login</NavLink>
             </>
           }
-            
-           
         </div>
     </nav>
   )
