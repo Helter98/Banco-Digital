@@ -71,3 +71,11 @@
     position: absolute;
     margin-top: -40px;
 }
+
+p {
+    font-size: 14px;
+    font-weight: 300;
+    color: red;
+    position: absolute;
+    margin: 0px 0px 120px 40px;
+}

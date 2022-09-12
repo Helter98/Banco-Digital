@@ -21,7 +21,7 @@ const Navbar = () => {
 
             {authenticated ? 
             <>
-            <NavLink to="/Transferencia">Pix</NavLink>
+            <NavLink to="/Transferencia">Transferência</NavLink>
             <NavLink to="/Deposito">Depósito</NavLink>
             <NavLink to="/Saque">Saque</NavLink>
             <NavLink to="/GerarBoleto">Gerar Boleto</NavLink>
