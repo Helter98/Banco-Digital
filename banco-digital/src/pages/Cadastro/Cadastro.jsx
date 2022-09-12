@@ -63,7 +63,7 @@ const Cadastro = () => {
           <div className="cadastraCamp">
 
           <div className='inputMaskType'>
-            <label htmlFor="">
+            <label>
             {type === "CPF" ?
               <InputMask className="styleInfo" mask="99999999999" type="text" name='document_number' id='document_number' {...register("document_number", { required: true})} placeholder="CPF" />
               : <InputMask className="styleInfo" mask="99999999000199" type="text" name='document_number' id='document_number' {...register("document_number", { required: true})} placeholder="CNPJ" />

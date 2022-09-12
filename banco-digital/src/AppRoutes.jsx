@@ -25,7 +25,7 @@ function AppRoutes() {
       return <div className="loading">Carregando...</div>
      }
      if (!authenticated){
-      return <Navigate to={"/Login"} /> 
+      return <Navigate to={"/"} /> 
      }
      return children;
   }

@@ -10,9 +10,10 @@ const Transferencia = () => {
       <div className="inputFormTransfer">
       <h1>Transferir Valor</h1>
       <label className='valorTranfer' htmlFor="">
-      <CurrencyInput type='text' name="myInput" pattern="\d*" required />
+       <p>R$</p> 
+      <CurrencyInput type='text' name="valorTransfer" pattern="\d*"  placeholder="0,00" required />
       </label>
-      <label className='valorTranfer' htmlFor="">
+      {/* <label className='valorTranfer' htmlFor="">
           <input type="text" name="name" id="name" placeholder="Transferir"/>
       </label>
 
@@ -22,7 +23,7 @@ const Transferencia = () => {
 
       <label className='valorTranfer' htmlFor="">
           <input type="text" name="name" id="name" placeholder="Transferir"/>
-      </label>
+      </label> */}
       </div>
     </form>
    </div>

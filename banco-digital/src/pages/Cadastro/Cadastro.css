@@ -8,6 +8,8 @@
 
 .Cadastro{
     display: flex;
+    color: var(--cor2);
+
 }
 
 .heroCadastro {
@@ -28,6 +30,7 @@
     max-width: 800px;
     border-radius: 15px;
     padding: 10px 0px;
+
 }
 
 form h1 {
@@ -56,10 +59,15 @@ form h1 {
     flex-direction: row;
     justify-content:left;
     padding: 0px 0px 0px 60px;
+    
 }
 
 .inputRadio  {
     margin-right: 20px;
+}
+
+.inputRadio input {
+    display: flex;
 }
 
 .inputMaskType{
@@ -67,6 +75,7 @@ form h1 {
     flex-direction: column;
     padding-top: 10px;
     margin-left: 50px;
+
 }
 
 .styleInfo {
@@ -81,6 +90,12 @@ form h1 {
     cursor:text;
     margin-top: 30px;
     margin-left: 20px;
+    color: var(--cor2);
+
+}
+
+.styleInfo:focus {
+    border-bottom: 1px solid var(--cor5);
 }
 
 .inputInfo{

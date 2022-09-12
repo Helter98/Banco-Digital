@@ -42,8 +42,12 @@
     outline: 0;
     cursor:text;
     margin: 40px auto;
-}
+    color: var(--cor2);
 
+}
+.loginCadasatro:focus {
+    border-bottom: 1px solid var(--cor5);
+}
 .buttonLogin {
    display: flex;
    margin: auto;
