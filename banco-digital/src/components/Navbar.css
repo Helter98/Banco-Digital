@@ -111,7 +111,7 @@ nav {
         justify-content:left;
         
         gap: 1.5rem;
-        transition: 1s; 
+        transition: 0.5s; 
         transform: translateY(-150vh);
         /* background-color: var(--cor4); */
         backdrop-filter: blur(10px);
