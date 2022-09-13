@@ -17,6 +17,7 @@ import Login from './pages/Login/Login';
 import { AuthProvider, AuthContext } from './context/auth';
 
 function AppRoutes() {
+  
   const Private = ({children}) => {
      const { authenticated, loading } = useContext(AuthContext); 
     
@@ -24,14 +25,10 @@ function AppRoutes() {
       return <div className="loading">Carregando...</div>
      }
      if (!authenticated){
-      return <Navigate to={"/login"} /> 
+      return <Navigate to={"/"} /> 
      }
      return children;
   }
-    
-  const logout = () => {
-    console.log('logout');
-  };
 
   return (
     <div className="App">
@@ -48,7 +45,7 @@ function AppRoutes() {
               <Route path='/Login' element={<Login />} />
               <Route path='/Cadastro' element={<Cadastro />} />
             </Routes>
-          </AuthProvider>
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );

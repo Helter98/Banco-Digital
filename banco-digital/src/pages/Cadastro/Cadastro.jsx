@@ -5,8 +5,6 @@ import { useForm } from 'react-hook-form'
 import InputMask from 'react-input-mask';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { useNavigate } from "react-router-dom";
-
 
 
 //ratamento de erros no preenchimento do formuláro
@@ -24,7 +22,7 @@ const schema = yup.object({
 
 const Cadastro = () => {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm(
+  const { register, handleSubmit, formState: { errors } } = useForm(
     {
     resolver: yupResolver(schema)
   }
@@ -32,9 +30,10 @@ const Cadastro = () => {
 
   const [type, setType] = useState("CPF")
 
-  const addCadastro = data => axios.post("https://390a-179-108-104-153.sa.ngrok.io/api/users/registration", data)
+  const addCadastro = data => axios.post("https://fc51-179-108-104-153.sa.ngrok.io/api/users/registration", data)
   .then((response) => {
     console.log(response.data)
+
   })
   .catch((erro) => {
     console.log(erro, 'erro')
@@ -64,7 +63,7 @@ const Cadastro = () => {
           <div className="cadastraCamp">
 
           <div className='inputMaskType'>
-            <label htmlFor="">
+            <label>
             {type === "CPF" ?
               <InputMask className="styleInfo" mask="99999999999" type="text" name='document_number' id='document_number' {...register("document_number", { required: true})} placeholder="CPF" />
               : <InputMask className="styleInfo" mask="99999999000199" type="text" name='document_number' id='document_number' {...register("document_number", { required: true})} placeholder="CNPJ" />
