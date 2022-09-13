@@ -1,4 +1,3 @@
-
 import './Navbar.css';
 import { Link, NavLink } from "react-router-dom"
 import cartao from '../assets/cartao.png'
@@ -22,31 +21,28 @@ const Navbar = () => {
 	};
 
   return (
-<header>    
-  <nav ref={navRef}>
-          <div>
-              <Link className='logo' to="/"><img src={cartao}alt="logo" /></Link>   
-            </div>
+        <header>    
+            <Link to="/"><img src={cartao}alt="logo" /></Link>   
+            <nav ref={navRef}>
             <NavLink className="backgroundLink" to="/"  >Início</NavLink>
             {authenticated ? 
             <>
-            <NavLink className="backgroundLink" to="/Transferencia">Pix</NavLink>
+            <NavLink className="backgroundLink" to="/Transferencia">Transferência</NavLink>
             <NavLink className="backgroundLink" to="/Deposito">Depósito</NavLink>
             <NavLink className="backgroundLink" to="/Saque">Saque</NavLink>
-            <NavLink className="backgroundLink" to="/GerarBoleto">Gerar Boleto</NavLink>
+            <NavLink className="backgroundLink" to="/GerarBoleto">Boleto</NavLink>
             <NavLink className="backgroundLink" to="/PagamentoBoleto">Pagar</NavLink> 
-            <button onClick={handleLogout}>Logout</button>
+            <button className='btn-logout' onClick={handleLogout}>Logout</button>
             </> :
             <>
              <NavLink  className="backgroundLink" to="/Cadastro">Cadastro</NavLink>
              <NavLink className="backgroundLink" to="/Login">Login</NavLink>
-             
-             <button className='nav-btn nav-close-btn' onClick={showNavbar} >
-              <FaTimes />
-             </button>
             </>
           }      
-      </nav>
+           <button className='nav-btn nav-close-btn' onClick={showNavbar} >
+              <FaTimes />
+             </button>
+      </nav> 
             <button className='nav-btn' onClick={showNavbar}>
               <FaBars />
             </button>

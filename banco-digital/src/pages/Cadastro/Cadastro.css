@@ -25,9 +25,10 @@
 .formCadastro {
     background-color: var(--cor4);
     margin: 10px auto;
-    min-width: 725px;
+    max-width: 725px;
+    min-width: 400px;
     height: 540px;
-    max-width: 800px;
+    margin: 20px auto;
     border-radius: 15px;
     padding: 10px 0px;
 

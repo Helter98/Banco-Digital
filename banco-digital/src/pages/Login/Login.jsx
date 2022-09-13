@@ -65,6 +65,7 @@ const Login = () => {
   // };
 
   return (
+    <div className="formularioDeLogin">
     <div className="login">
       <form className="FormLogin" onSubmit={handleSubmit(addLogin)}>
         <h1>Login</h1>
@@ -96,6 +97,7 @@ const Login = () => {
         </div>
         <input className="buttonLogin" type="submit" value="Entrar" />
       </form>
+    </div>
     </div>
   );
 };

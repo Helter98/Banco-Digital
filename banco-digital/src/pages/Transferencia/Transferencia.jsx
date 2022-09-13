@@ -5,7 +5,7 @@ import CurrencyInput from 'react-currency-masked-input'
 const Transferencia = () => {
   return (
    <div className="heroTranfer">
-    <form className='formTransfer' action="">
+    <form className='formTransfer'>
       
       <div className="inputFormTransfer">
       <h1>Transferir Valor</h1>

@@ -15,7 +15,6 @@
     background-repeat: no-repeat;
     width:100%;
     height: 700px;
-
 }
 
 .infoCadastro {
@@ -67,6 +66,8 @@
 }
 .btnCadastro:hover{
     background-color:var(--cor5);
+    padding: 10px 45px;
+    
 }
 .btnCadastro::placeholder {
     color: #35B6CE;
