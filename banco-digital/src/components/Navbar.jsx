@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom"
 import cartao from '../assets/cartao.png'
 import React, {useContext} from 'react';
 import { AuthContext } from '../context/auth';
+import { useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -11,32 +13,43 @@ const Navbar = () => {
   const handleLogout = () =>{
     logout();
   }
-  return (
-    <nav>
-        <div className='logo'>
-            <Link  to="/"><img src={cartao}alt="logo" /></Link>
-        </div>
-        <div className="links">            
-            <NavLink to="/"  >Início</NavLink>
 
+  const navRef = useRef();
+
+	const showNavbar = () => {
+		navRef.current.classList.toggle("responsive_nav");
+	};
+
+  return (
+<header>    
+  <nav ref={navRef}>
+          <div>
+              <Link className='logo' to="/"><img src={cartao}alt="logo" /></Link>   
+            </div>
+            <NavLink className="backgroundLink" to="/"  >Início</NavLink>
             {authenticated ? 
             <>
-            <NavLink to="/Transferencia">Pix</NavLink>
-            <NavLink to="/Deposito">Depósito</NavLink>
-            <NavLink to="/Saque">Saque</NavLink>
-            <NavLink to="/GerarBoleto">Gerar Boleto</NavLink>
-            <NavLink to="/PagamentoBoleto">Pagar</NavLink> 
+            <NavLink className="backgroundLink" to="/Transferencia">Pix</NavLink>
+            <NavLink className="backgroundLink" to="/Deposito">Depósito</NavLink>
+            <NavLink className="backgroundLink" to="/Saque">Saque</NavLink>
+            <NavLink className="backgroundLink" to="/GerarBoleto">Gerar Boleto</NavLink>
+            <NavLink className="backgroundLink" to="/PagamentoBoleto">Pagar</NavLink> 
             <button onClick={handleLogout}>Logout</button>
-            </>  :
+            </> :
             <>
-             <NavLink className="btnPCadastro" to="/Cadastro">Cadastro</NavLink>
-             <NavLink className="btnLogin" to="/Login">Login</NavLink>
+             <NavLink  className="backgroundLink" to="/Cadastro">Cadastro</NavLink>
+             <NavLink className="backgroundLink" to="/Login">Login</NavLink>
+             
+             <button className='nav-btn nav-close-btn' onClick={showNavbar} >
+              <FaTimes />
+             </button>
             </>
-          }
-            
-           
-        </div>
-    </nav>
+          }      
+      </nav>
+            <button className='nav-btn' onClick={showNavbar}>
+              <FaBars />
+            </button>
+    </header>
   )
 }
 
