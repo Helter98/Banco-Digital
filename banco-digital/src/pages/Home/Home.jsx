@@ -13,9 +13,7 @@ const Home = () => {
            </h1>
         </div>
 
-        <div className="intBtn">
-          <NavLink className="btnCadastro" to="/Cadastro">Cadastro</NavLink>
-        </div>
+      
       </div>
   )
 }
