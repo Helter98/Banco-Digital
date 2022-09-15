@@ -34,6 +34,6 @@ export const api = axios.create({
       grant_type: "password"
     },);}
 
-export const userAccount = async () => {
-    return api.get("/api/users")
-  }
+// export const userAccount = async () => {
+//     return api.get("/api/users")
+//   }
