@@ -16,17 +16,16 @@ export const AuthProvider = ({children}) => {
         setLoading(false);
     }, []);
 
-  const login = (username, password) => {
+  const login = (username, password, token) => {
+    
     console.log("login", {username, password});
-   
-   
-
     const loggedUser = {
         username
     };
     localStorage.setItem('user', JSON.stringify(loggedUser));
     setUser(loggedUser) 
-    navigate("/")
+    navigate("/SuaConta")
+
   }
         
   const logout = () => {

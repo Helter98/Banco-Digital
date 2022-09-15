@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export const Api = axios.create({
-    baseURL: "https://390a-179-108-104-153.sa.ngrok.io/oauth/token"
+export const api = axios.create({
+    baseURL: "https://7c71-179-108-104-153.sa.ngrok.io"
 });
 
 export const createSession = async (username, password) => {
-    return Api.post(``, { username, password });
+    return api.post("oauth/token", { username, password });
 };
 
 

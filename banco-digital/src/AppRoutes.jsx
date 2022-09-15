@@ -13,8 +13,10 @@ import Saque from './pages/Saque/Saque';
 import GerarBoleto from './pages/GerarBoleto/GerarBoleto';
 import PagamentoBoleto from './pages/PagamentoBoleto/PagamentoBoleto';
 import Login from './pages/Login/Login';
+import SuaConta from './pages/SuaConta/SuaConta'
 
 import { AuthProvider, AuthContext } from './context/auth';
+
 
 function AppRoutes() {
   
@@ -25,7 +27,7 @@ function AppRoutes() {
       return <div className="loading">Carregando...</div>
      }
      if (!authenticated){
-      return <Navigate to={"/"} /> 
+      return <Navigate to={"/SuaConta"} /> 
      }
      return children;
   }
@@ -37,6 +39,8 @@ function AppRoutes() {
           <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
+              
+              <Route path="/SuaConta" element={ <Private> <SuaConta /> </Private>} />
               <Route path="/Transferencia"  element={ <Private> <Transferencia/> </Private>} />
               <Route path='/Deposito' element={<Private> <Deposito /> </Private>} />
               <Route path='/Saque' element={<Private> <Saque /> </Private>} />

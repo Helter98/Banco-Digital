@@ -18,15 +18,17 @@ const Navbar = () => {
 
 	const showNavbar = () => {
 		navRef.current.classList.toggle("responsive_nav");
+
 	};
 
   return (
         <header>    
             <Link to="/"><img src={cartao}alt="logo" /></Link>   
             <nav ref={navRef}>
-            <NavLink className="backgroundLink" to="/"  >Início</NavLink>
+            
             {authenticated ? 
             <>
+            <NavLink className="backgroundLink" to="/SuaConta">Sua conta</NavLink>
             <NavLink className="backgroundLink" to="/Transferencia">Transferência</NavLink>
             <NavLink className="backgroundLink" to="/Deposito">Depósito</NavLink>
             <NavLink className="backgroundLink" to="/Saque">Saque</NavLink>
@@ -35,6 +37,7 @@ const Navbar = () => {
             <button className='btn-logout' onClick={handleLogout}>Logout</button>
             </> :
             <>
+              <NavLink className="backgroundLink" to="/"  >Início</NavLink>
              <NavLink  className="backgroundLink" to="/Cadastro">Cadastro</NavLink>
              <NavLink className="backgroundLink" to="/Login">Login</NavLink>
             </>
