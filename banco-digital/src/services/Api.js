@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://741c-179-108-104-153.sa.ngrok.io",
+  baseURL: "https://acca-179-108-104-153.sa.ngrok.io",
 });
 
   export const createSession = async (username, password) => {
@@ -10,7 +10,7 @@ export const api = axios.create({
       username, 
       password, 
       client_id: "1", 
-      client_secret: "bDjHxYH4OHLEWLunvPWhHhpKBtqZ8xIPb954BOHX", 
+      client_secret: "jiurhlGUNrjqALI6o9e1WBtSwb1pIg2FrZSKJUCZ", 
       grant_type: "password"
 },);}
 

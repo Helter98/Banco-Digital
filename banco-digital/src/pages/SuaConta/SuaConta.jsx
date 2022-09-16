@@ -15,19 +15,19 @@ function SuaConta() {
       headers: {
         Accept: "application/json", 
         "ngrok-skip-browser-warning": null, 
-        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzIyY2ExNDIyNTZjOWRjODg2YzQ0MTVhOWVhZWM0NzRiZTIyYWQzY2Y0M2RkMWVjNWMxYzJiOTY2NzY0OTIxNWJjNTJiNDRhY2U5MTVlNTEiLCJpYXQiOjE2NjMzNDM1NzguNjE0NDMxLCJuYmYiOjE2NjMzNDM1NzguNjE0NDQsImV4cCI6MTY5NDg3OTU3OC41Njk3OTIsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.ZjxOW8S1kRRclTrIprd4Dqmif7j3oWJ3RN_nkV9EKrtdYXhuC7JHtxXa_Esqm3qO-fifNU1CqytIZ0BkwuPLE551Mxg1z43yjuSSzLVMu3OQRAiaPHCQzdRzW6XWPY9Z5LvKJ-OhU47MDWk6w1luS8d_fMZyUWP1hsfLLjH0aZ6L5r3xD7Qj3KdQWRiLZqLNxPnbfKTDn8JaxIqDW8cZyMWK3xTkcy9oAGiJ3C_mfdVPEetMOmpwsHINLNuS7BGycSGCAfpCEZS7vYfDTrSwOXh1IylFGALDqWOAiHLAIzccWj1olc8WdOjTaNOQYYmorepvHCkQ2oza0a50KyrLBsWsOiIJNy1DC1fBHT1uJqLbHLwqPYTApsKpzwgkh96YKiMszFmsIRUpwAMRwq4cX5RyXqXRVPNGiyScaprk79IoptTYi83ALZsrQxH22dBdhYXE-alRT3VMyk2h_-paAIUJRjv2LmcEXRXmt-IVMJHFINNWF1LtwMsizNjiy1U8z4iv48pA4_lw7NCuXwOC7uqbyMPOIgAqAalS5aj3aEKoHqRBBm5OyMnS7b5l7052guke8Zf3611yZ8Acq72DPsduKsFw7Krx1emgWI-Eoga1zt76aM78yTBA_gfRQYG9cKPRMyksOkXY6-5ofv6UDN62TBZjEzHBeWhC2O9pY8Q`
+        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjhjZjc4ZWI1NmFmODA2ODdlMGI0OThjNjJlOTI5NzQ4NzIzOTVhYjljOWRkMmQ2OTJlYmEzNDIyMmY3ZGQ4MGU5ZjAwNDE2ZjJjM2Q5YmEiLCJpYXQiOjE2NjMzNDUwMDIuMTAzNDE0LCJuYmYiOjE2NjMzNDUwMDIuMTAzNDMsImV4cCI6MTY5NDg4MTAwMi4wNDM0NjUsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.Lst9WXFuWXyWiR5hoFyimx7L-YO0G9LCt6Uwy8PFidyNg1z8YcecQy7oPtF6hWeB5vt5dAoDRQe0YwiOeuOejJbf3J4bIYi1TEDaHM6SrBGXXb0LJcKCj-m3Koe_X7EiiBFYCegPR8gAI5DF_Z3lDRXyIl5VaHY2JvFoyssVUe_aRogjCiz1rlIO-8NHjHOCkZCEKVtsUtZbh3Tl1OvF6bIlBm1wtcJovFa-CWfMgQ906N8IABA1TomKSu7if2qnsFMPwAbpV04p8mBP9tzy2NikdJQiKQl2xfnvIyqGx5H-aQW-pi3uMfqL7IALzoEr7IkCMpHouZITvg0Fsu0ukztnoei4MnF_PvkME0WtvPZcjEW8-8keg2eNiYxRF1wguldTLEaZ7ZIixy_IKAq28-WeH7sdxKfuKPxx8CWNpxPRoAB7C8mXsOUl3ihb8UD75wi_ZRIYN3XTlgFF5LDVHwDpbrHJEBBoq2HTe0dP2Vlv6uSWZwQ04dmVFq-IQS0IglOqigBDXDkMBiY8ncr3eMT6ym24ZAVtpmyGOYl-N2LVifBRScMmfjPJyIsRivx_PLcmt8wc8AHbGkxrN7HabnmXzXf1TSUnvnYhjjS7BAV2pCwCb1RtyWED5kURpAt4fscqzB5GA_lX2skrFegjAOmyrL31lWgkyLGeLt2wuJo`
     }
     }
-    axios.get("https://741c-179-108-104-153.sa.ngrok.io/api/users", dataUser)
+    axios.get("https://acca-179-108-104-153.sa.ngrok.io/api/show", dataUser)
     .then((response => {
-      setConta(response.data)
+      setConta(response)
     }))
     .catch((erro) => {
       console.log(erro, 'erro')
     })
   }, []) 
 
-  console.log(conta)
+  console.log(conta);
 
   return (
     <div>
