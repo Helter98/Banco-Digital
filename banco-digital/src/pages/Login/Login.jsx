@@ -1,11 +1,11 @@
 import "./Login.css";
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../../context/auth";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const schema = yup.object({
   username: yup.string().email('Digite um email válido').required('O email é obrigatório'),
@@ -13,16 +13,14 @@ const schema = yup.object({
 
 }).required();
 
-
-
 const Login = () => {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema)
   });
 
   const { authenticated, login } = useContext(AuthContext);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -30,8 +28,6 @@ const Login = () => {
     // e.preventDefault();
     login(username, password);
     // navigate("/SuaConta");
-
-    
   };
 
   // const addLogin = async (data) => {

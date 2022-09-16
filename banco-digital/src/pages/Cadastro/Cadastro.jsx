@@ -23,14 +23,16 @@ const schema = yup.object({
 const Cadastro = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm(
-    {
+  {
     resolver: yupResolver(schema)
   }
   );
 
   const [type, setType] = useState("CPF")
 
-  const addCadastro = data => axios.post("https://fc51-179-108-104-153.sa.ngrok.io/api/users/registration", data)
+  
+
+  const addCadastro = data => axios.post("https://741c-179-108-104-153.sa.ngrok.io/api/users/registration", data)
   .then((response) => {
     console.log(response.data)
 
