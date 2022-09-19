@@ -1,11 +1,10 @@
 import "./Login.css";
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../../context/auth";
-// import { useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-// import { useEffect } from "react";
+
 
 const schema = yup.object({
   username: yup.string().email('Digite um email válido').required('O email é obrigatório'),
@@ -20,51 +19,12 @@ const Login = () => {
   });
 
   const { authenticated, login } = useContext(AuthContext);
-  // const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const addLogin = (e) => {
-    // e.preventDefault();
     login(username, password);
-    // navigate("/SuaConta");
   };
-
-  // const addLogin = async (data) => {
-    // data.preventDefault();
-  //   console.log(username, password);
-  //   const user = {
-  //     username,
-  //     password,
-  //     client_id: "1",
-  //     client_secret: "bDjHxYH4OHLEWLunvPWhHhpKBtqZ8xIPb954BOHX",
-  //     grant_type: "password",
-  //   };
-
-  //   await fetch("https://0630-179-108-104-153.sa.ngrok.io/oauth/token", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       "Access-Control-Allow-Origin": "*",
-  //     },
-  //     body: JSON.stringify(user),
-  //   })
-  //     .then((response)=> {
-
-  //       return response.json();        
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //     })
-  //     .catch((erro) => {
-  //       console.log(erro, "erro");
-  //     });
-
-  //        login(username, password);
-  //        navigate("/SuaConta")
-  // };
-
-  
 
   return (
     <div className="formularioDeLogin">
