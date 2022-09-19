@@ -25,6 +25,7 @@ function SuaConta() {
     axios.get("https://51e9-179-108-104-153.sa.ngrok.io/api/users", dataUser)
     .then((response => {
       setConta(response.data)
+      console.log(conta)
     }))
     .catch((erro) => {
       console.log(erro, 'erro')
@@ -37,11 +38,18 @@ function SuaConta() {
     userAccount();
   },[])
 
+
   return (
     <div>
       <h1>Sua conta</h1>
       
-      <div>Saldo: </div>
+      {Object.values(conta).map((contas, key) => (
+          <div key={key}>
+            
+            <h3> Usuário: {contas.name} </h3>
+          </div>
+        )
+        )}
     </div>
   )
 }
